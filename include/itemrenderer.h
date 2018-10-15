@@ -29,7 +29,7 @@ namespace item_renderer {
 
 	/// \brief Returns RssItem as STFL list.
 	///
-	/// `html-renderer` settings controlls what tool is used to render HTML. \a
+	/// `html-renderer` settings controls what tool is used to render HTML. \a
 	/// text_width dictates where text is wrapped. \a window_width dictates
 	/// where URLs are wrapped. \a rxman rules for \a location are used to
 	/// highlight the resulting text.
