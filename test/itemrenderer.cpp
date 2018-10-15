@@ -31,7 +31,7 @@ static const auto ITEM_FLAGS = std::string("wasdhjkl");
 static const auto ITEM_FLAGS_RENDERED = std::string("adhjklsw");
 std::pair<std::shared_ptr<RssItem>, std::shared_ptr<RssFeed>> test_item(Cache* c)
 {
-	auto feed = test_feed(c);
+	const auto feed = test_feed(c);
 
 	auto item = std::make_shared<RssItem>(c);
 
