@@ -10,7 +10,7 @@
 namespace newsboat {
 
 std::string item_renderer::get_feedtitle(std::shared_ptr<RssItem> item) {
-	std::shared_ptr<RssFeed> feedptr = item->get_feedptr();
+	const std::shared_ptr<RssFeed> feedptr = item->get_feedptr();
 
 	std::string feedtitle;
 	if (feedptr) {
