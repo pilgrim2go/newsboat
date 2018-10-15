@@ -371,7 +371,7 @@ TEST_CASE("item_renderer::to_plain_text honours `html-renderer` setting",
 			REQUIRE(result == expected);
 		}
 
-		// cat is pretty much guaranteed ot be present in any Unix-like
+		// cat is pretty much guaranteed to be present in any Unix-like
 		// environment, so let's use that instead of the less common w3m.
 		SECTION("/bin/cat as a renderer") {
 			cfg.set_configvalue("html-renderer", "/bin/cat");
@@ -422,7 +422,7 @@ TEST_CASE("item_renderer::to_plain_text honours `html-renderer` setting",
 			REQUIRE(result == expected);
 		}
 
-		// cat is pretty much guaranteed ot be present in any Unix-like
+		// cat is pretty much guaranteed to be present in any Unix-like
 		// environment, so let's use that instead of the less common w3m.
 		SECTION("/bin/cat as a renderer") {
 			cfg.set_configvalue("html-renderer", "/bin/cat");
