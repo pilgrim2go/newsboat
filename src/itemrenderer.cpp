@@ -44,7 +44,7 @@ void prepare_header(
 			}
 		};
 
-	const auto feedtitle = item_renderer::get_feedtitle(item);
+	const std::string feedtitle = item_renderer::get_feedtitle(item);
 	add_line(feedtitle, _("Feed: "));
 	add_line(item->title(), _("Title: "));
 	add_line(item->author(), _("Author: "));
