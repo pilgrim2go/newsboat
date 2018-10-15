@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 
-#include "textformatter.h"
 #include "htmlrenderer.h"
+#include "textformatter.h"
 
 namespace newsboat {
 
