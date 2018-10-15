@@ -91,7 +91,7 @@ void ItemViewFormAction::prepare()
 
 		update_head(item);
 
-		std::string widthstr = f->get("article:w");
+		const std::string widthstr = f->get("article:w");
 		const unsigned int window_width = Utils::to_u(widthstr, 0);
 
 		unsigned int text_width =
