@@ -8,7 +8,7 @@
 using namespace newsboat;
 
 static const auto FEED_TITLE = std::string("Funniest jokes ever");
-std::shared_ptr<RssFeed> test_feed(Cache* c)
+std::shared_ptr<RssFeed> create_test_feed(Cache* c)
 {
 	auto feed = std::make_shared<RssFeed>(c);
 
@@ -31,7 +31,7 @@ static const auto ITEM_FLAGS = std::string("wasdhjkl");
 static const auto ITEM_FLAGS_RENDERED = std::string("adhjklsw");
 std::pair<std::shared_ptr<RssItem>, std::shared_ptr<RssFeed>> test_item(Cache* c)
 {
-	const auto feed = test_feed(c);
+	const auto feed = create_test_feed(c);
 
 	auto item = std::make_shared<RssItem>(c);
 
