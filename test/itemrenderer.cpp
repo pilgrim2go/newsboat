@@ -29,7 +29,7 @@ static const auto ITEM_ENCLOSURE_URL =
 static const auto ITEM_FLAGS = std::string("wasdhjkl");
 // Flags are sorted for rendering.
 static const auto ITEM_FLAGS_RENDERED = std::string("adhjklsw");
-std::pair<std::shared_ptr<RssItem>, std::shared_ptr<RssFeed>> test_item(Cache* c)
+std::pair<std::shared_ptr<RssItem>, std::shared_ptr<RssFeed>> create_test_item(Cache* c)
 {
 	const auto feed = create_test_feed(c);
 
@@ -61,7 +61,7 @@ TEST_CASE("item_renderer::to_plain_text() produces a rendered representation "
 
 	std::shared_ptr<RssItem> item;
 	std::shared_ptr<RssFeed> feed;
-	std::tie(item, feed) = test_item(&rsscache);
+	std::tie(item, feed) = create_test_item(&rsscache);
 
 	SECTION("Item without an enclosure") {
 		item->set_description(ITEM_DESCRIPTON);
@@ -140,7 +140,7 @@ TEST_CASE("item_renderer::to_plain_text() renders text to the width specified "
 
 	std::shared_ptr<RssItem> item;
 	std::shared_ptr<RssFeed> feed;
-	std::tie(item, feed) = test_item(&rsscache);
+	std::tie(item, feed) = create_test_item(&rsscache);
 
 	item->set_description(
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
@@ -228,7 +228,7 @@ TEST_CASE("Empty fields are not rendered", "[item_renderer]")
 
 	std::shared_ptr<RssItem> item;
 	std::shared_ptr<RssFeed> feed;
-	std::tie(item, feed) = test_item(&rsscache);
+	std::tie(item, feed) = create_test_item(&rsscache);
 
 	SECTION("Item without a feed title") {
 		item->get_feedptr()->set_title("");
@@ -342,7 +342,7 @@ TEST_CASE("item_renderer::to_plain_text honours `html-renderer` setting",
 
 	std::shared_ptr<RssItem> item;
 	std::shared_ptr<RssFeed> feed;
-	std::tie(item, feed) = test_item(&rsscache);
+	std::tie(item, feed) = create_test_item(&rsscache);
 
 	SECTION("Single-paragraph description") {
 		const auto description = std::string() +
@@ -455,7 +455,7 @@ TEST_CASE("item_renderer::get_feedtitle() returns item's feed title without "
 
 	std::shared_ptr<RssItem> item;
 	std::shared_ptr<RssFeed> feed;
-	std::tie(item, feed) = test_item(&rsscache);
+	std::tie(item, feed) = create_test_item(&rsscache);
 
 	SECTION("Title without soft hyphens") {
 		feed->set_title("Welcome, lovely strangers!");
@@ -478,7 +478,7 @@ TEST_CASE("item_renderer::get_feedtitle() returns item's feed self-link "
 
 	std::shared_ptr<RssItem> item;
 	std::shared_ptr<RssFeed> feed;
-	std::tie(item, feed) = test_item(&rsscache);
+	std::tie(item, feed) = create_test_item(&rsscache);
 
 	const auto feedlink = std::string("https://rss.example.com/~joe/");
 
@@ -498,7 +498,7 @@ TEST_CASE("item_renderer::get_feedtitle() returns item's feed URL "
 
 	std::shared_ptr<RssItem> item;
 	std::shared_ptr<RssFeed> feed;
-	std::tie(item, feed) = test_item(&rsscache);
+	std::tie(item, feed) = create_test_item(&rsscache);
 
 	const auto feedurl = std::string("https://example.com/~joe/entries.rss");
 
